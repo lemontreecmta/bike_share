@@ -11,4 +11,7 @@ Result: Random forest is the best classifier out of the three. The optimal param
 
 Possible improvement: For random forest, the R package allows adjustment of different parameters (sampling with or without replacement, size of sample to draw, minimum and maximum sizes of terminal nodes, etc) which can potentially lead to better result, (though I suspect it will not be a significant improvement). Other technique of tree ensembles may also yield better result with good choice of number of trees, weights and other important parameters. 
 
+Thank-you: Many thanks to developers of packages e1071, rpart, randomForest, Metrics and lubridate and of R programming language. I can never go this far without your contributions. 
+
+
 
