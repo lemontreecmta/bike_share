@@ -27,11 +27,11 @@ svm.model<- svm(count ~ season + holiday +
                   windspeed , data=train.1a,  
                 cost = 0.03, gamma = 0.025)
 prediction<-predict(svm.model, train.1b)
-train.1b$predicted.count<-0
-train.1b$predicted.count = prediction
+train.b$predicted.count<-0
+train.b$predicted.count = prediction
 # because regression model can output negative result, set all negative to 1
-train.1b$predicted.count[train.b$predicted.count<0] = 1
-rmse(train.1b$count, train.b$predicted.count)
+train.b$predicted.count[train.b$predicted.count<0] = 1
+rmse(train.b$count, train.b$predicted.count)
 
 # train model and output test data's prediction to submit to Kaggle
 
@@ -43,7 +43,7 @@ svm.model<- svm(count ~ season + holiday +
 prediction<-predict(svm.model, test)
 test$count = prediction
 submit <- data.frame(datetime = test$datetime, count = test$count)
-write.csv(submit, file = "rpart.csv", row.names = FALSE)
+write.csv(submit, file = "svm.csv", row.names = FALSE)
 
 ## decision tree - one tree
 
