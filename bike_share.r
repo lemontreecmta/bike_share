@@ -116,7 +116,7 @@ random.forest<-randomForest(count~ season + holiday +
 prediction<-predict(random.forest, test)
 test$count<-prediction
 submit <- data.frame(datetime = test$datetime, count = test$count)
-write.csv(submit, file = "randomforest.csv", row.names = FALSE)
+write.csv(submit, file = "result.csv", row.names = FALSE)
 
 #result: 0.60277 (with mtry (random selected features) = p/3)
 # 0.48810 (with mtry = 7)
